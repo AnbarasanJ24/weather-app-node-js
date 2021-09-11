@@ -1,8 +1,11 @@
-const request = require('request');
+const getTemperature = require("./utils/getTemperature");
+const logger = require("./utils/logger");
 
-const URL = 'http://api.openweathermap.org/data/2.5/forecast?q=Pondicherry&APPID=c4a6ab5e461a2ef6a2afd648db376615'
-
-request.get({ url: URL }, (error, response) => {
-    const data = JSON.parse(response.body)
-    console.log(data.list[0].main)
-})
+const location = process.argv[2];
+getTemperature(location, (error, data) => {
+  if (error) {
+    console.log(error);
+  } else {
+    logger(location, data.min_temp, data.max_temp);
+  }
+});
