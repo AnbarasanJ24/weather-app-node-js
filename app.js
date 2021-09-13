@@ -1,6 +1,7 @@
 const getTemperature = require("./utils/getTemperature");
 const logger = require("./utils/logger");
 
+
 const location = process.argv[2];
 getTemperature(location, (error, data) => {
   if (error) {
