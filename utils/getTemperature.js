@@ -20,6 +20,8 @@ const getTemperature = (location, callback) => {
     }
   });
 };
+
+
 // Using Node HTTP Module
 // const getTemperature = (location, callback) => {
 //   const URL = `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(

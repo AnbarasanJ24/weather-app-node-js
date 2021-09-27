@@ -3,6 +3,7 @@ const logger = require("./utils/logger");
 
 
 const location = process.argv[2];
+
 getTemperature(location, (error, data) => {
   if (error) {
     console.log(error);
