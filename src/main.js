@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+
 const path = require('path');
 const hbs = require('hbs');
 const getTemperature = require("../utils/getTemperature");
@@ -17,19 +18,13 @@ hbs.registerPartials(partialsPath);
 // Setup Static content config
 app.use(express.static(publicPath));
 
+
+// All CRUD Operation
 app.get("", (req, res) => {
   res.render('index', {
     title: 'Weather',
     body: 'Body of Weather App '
   })
-});
-
-app.get("/help", (req, res) => {
-  const user = {
-    username: "Anbarasan",
-    age: 25,
-  };
-  res.send(user);
 });
 
 app.get("/weather", (req, res) => {
